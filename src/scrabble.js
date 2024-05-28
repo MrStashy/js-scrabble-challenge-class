@@ -41,11 +41,14 @@ class Scrabble {
         }
       }
     }
+    if (this.word[0] === '{' && this.word[this.word.length - 1] === '}') {
+      return runningTotal * 2
+    }
+    if (this.word[0] === '[' && this.word[this.word.length - 1] === ']') {
+      return runningTotal * 3
+    }
     return runningTotal
   }
 }
-
-const game1 = new Scrabble('fanny')
-console.log(game1.score())
 
 module.exports = Scrabble

@@ -63,4 +63,10 @@ describe("Scrabble", function() {
 
     expect(scrabble.score()).toEqual(7)
   })
+
+  it('Calculates double word scores accurately', function() {
+    scrabble = new Scrabble('[d{o}g]')
+
+    expect(scrabble.score()).toEqual(18)
+  })
 })
