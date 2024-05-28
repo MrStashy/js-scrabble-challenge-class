@@ -51,4 +51,16 @@ describe("Scrabble", function() {
 
     expect(scrabble.score()).toEqual(41)
   })
+
+  it('Calculates double letter scores accurately', function() {
+    scrabble = new Scrabble('d{o}g')
+
+    expect(scrabble.score()).toEqual(6)
+  })
+
+  it('Calculates double letter scores accurately', function() {
+    scrabble = new Scrabble('d[o]g')
+
+    expect(scrabble.score()).toEqual(7)
+  })
 })

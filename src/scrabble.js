@@ -27,8 +27,14 @@ class Scrabble {
       for (let j = 0; j < Object.values(this.scores).length; j++) {
         if (Object.values(this.scores)[j].includes(letter)) {
           scoreKey = Object.values(this.scores)[j]
-          for (const score in this.scores) {
+          for (let score in this.scores) {
             if (this.scores[score] === scoreKey) {
+              if (this.word[i - 1] === '{' && this.word[i + 1] === '}') {
+                score *= 2
+              }
+              if (this.word[i - 1] === '[' && this.word[i + 1] === ']') {
+                score *= 3
+              }
               runningTotal += Number(score)
             }
           }
